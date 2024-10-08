@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 450,
+    "title": "where are launches going?",
+    "data":{
+        "url": "https://raw.githubusercontent.com/hsmi0021/fit3179/refs/heads/main/all%20launches.csv"
+    },
+    "transform": [
+        
+    ],
+    "layer": [
+        {
+            "mark":{"type":"image","height":50,"width":50},
+            "encoding": {
+                "x":{
+                    "field":"orbit",
+                    "type": "nominal",
+                    "sort":"ascending"
+                    
+                },
+                "y":{
+                    "aggregate":"count",
+                    "field":"orbit",
+                    "type": "quantitative",
+                    "scale":{
+                        "domain":[0,3500]
+                    }
+                },
+                "url":{"value":"https://upload.wikimedia.org/wikipedia/commons/3/33/Cartoon_space_rocket.png"},
+                "tooltip":[
+                    {"field":"orbit","title":"orbit"},
+                    {"aggregate":"count","field":"orbit","title":"number of launches"},
+                    {"aggregate":"median","field":"Launch_Date","type": "temporal","title":"median launch date"}
+                    
+            ]
+            }
+            
+        }
+
+    ]
+}

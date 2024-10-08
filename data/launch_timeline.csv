@@ -1,0 +1,13 @@
+﻿country,year,value,url,offset
+Soviet Union,1957,1,https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_the_Soviet_Union.svg/800px-Flag_of_the_Soviet_Union.svg.png,1.5
+USA,1958,1,https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg,0.5
+France,1965,1,https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/800px-Flag_of_France.svg.png,1.5
+Japan,1970,1,https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/1200px-Flag_of_Japan.svg.png,0.5
+UK,1971,1,https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png,1.5
+ESA,1979,1,https://www.fotw.info/images/i/int-esa2.gif,0.5
+India,1980,1,https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg,1.5
+Isreal,1988,1,https://cdn.britannica.com/53/1753-004-03582EDA/Flag-Israel.jpg,0.5
+Ukraine,1991,1,https://flagmakers.co.uk/media/t5dbmcrv/flag_of_ukraine.png?anchor=center&mode=crop&width=1530&height=0&rnd=132906154057230000,1.5
+Russia,1992,1,https://cdn.britannica.com/42/3842-004-F47B77BC/Flag-Russia.jpg,0.5
+North Korea,2012,1,https://cdn.britannica.com/47/1947-050-68FB6BE0/Flag-North-Korea.jpg,1.5
+South Korea,2013,1,https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/800px-Flag_of_South_Korea.svg.png,0.5

@@ -1,0 +1,92 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 100,
+    "width": 1800,
+    "title": "contries to space timeline",
+    "data": {
+        "url": "https://raw.githubusercontent.com/hsmi0021/fit3179/refs/heads/main/launch_timeline.csv"
+      
+    },
+
+    "layer": [{
+        "mark":"point",
+        "encoding": {
+            "x":{
+                "field":"year",
+                "type": "temporal",
+                "title":"time",
+                "axis":{
+                    "grid": false
+                }
+            },
+            "y":{
+                "field":"value",
+                "type": "quantitative",
+                "scale":{"type": "linear","domain":[0,2]},
+                "axis":{
+                    "grid": true,
+                    "gridOpacity":[1],
+                    "gridColor":"black",
+                    "labelOpacity":[0],
+                    "domainOpacity":[0],
+                    "gridWidth":0
+                },
+                "title":null
+                
+            },
+            "size":{
+                "value":[100]
+            },
+            "url":{
+                "field":"url"     
+            },
+
+            "color":{"value":"black"},
+            "tooltip":{
+                "field": "year","type": "temporal"
+                
+            }
+        }
+
+    },
+    {
+        "mark":"line",
+        "encoding": {
+            "x":{
+                "field":"year",
+                "type": "temporal"
+            },
+            "y":{
+                "field":"value",
+                "type": "quantitative"
+            },
+            "color":{"value":"black"}
+        }
+    },
+    {
+        "mark": {"type": "image", "width": 30, "height": 30, "align":"center","stroke":"black"},
+        "encoding": {
+            "x":{
+                "field":"year",
+                "type": "temporal"
+            },
+            "y":{
+                "field":"offset",
+                "type": "quantitative"
+            },
+            "url":{
+                "field":"url"     
+            },
+            "tooltip":{
+                "field":"country"
+
+            }
+            
+
+        }
+        
+    }
+        
+    ]
+
+}

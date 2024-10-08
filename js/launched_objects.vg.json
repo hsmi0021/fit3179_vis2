@@ -1,0 +1,75 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1650,
+    "height": 450,
+    "title": {"text":"payloads launched into space each year", "fontSize":32},
+    "data":{
+        "url": "https://raw.githubusercontent.com/hsmi0021/fit3179/refs/heads/main/yearly-number-of-objects-launched-into-outer-space.csv"
+    },
+    "transform": [
+        {"filter":"datum.Num >= 10"}
+    ],
+    
+    "layer": [
+        {
+            "params": [{
+                "name":"Code",
+                "select":{"type": "point","fields": ["Entity"]},
+                "bind":"legend"
+            }],
+            "mark":"line",
+            "encoding": {
+                "x":{
+                    "field":"Year",
+                    "type": "temporal"
+                },
+                "y":{
+                    "field":"Num",
+                    "type": "quantitative"
+                },
+                "color":{
+                    "field":"Entity",
+                    "type": "nominal"
+                    
+                },
+                "opacity": {
+                    "condition": {"param": "Code", "value": 1},
+                    "value": 0.1
+                    }
+                
+                
+            }
+        },
+        {
+            "mark":{"type": "point","filled": true},
+            "encoding": {
+                "x":{
+                    "field":"Year",
+                    "type": "temporal"
+                },
+                "y":{
+                    "field":"Num",
+                    "type": "quantitative"
+                },
+                "color":{
+                    "field":"Entity",
+                    "type": "nominal"
+                    
+                },
+                
+                "opacity": {
+                    "condition": {"param": "Code", "value": 1},
+                    "value": 0.1
+                    },
+                "size":{"value":50},
+                "tooltip":[
+                    {"field":"Entity","title":"country/agency"},
+                    {"field":"Num","title":"objects launched into space"}
+                ]
+
+            }
+            
+        }
+        
+    ]
+}
