@@ -1,30 +1,38 @@
 {
 "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-"width": 800,
+"width": 600,
 "height": 450,
 "title": {"text":"where are satelites being placed and how much are they carrying?", "fontSize":24},
-"data":{
-    "url": "https://raw.githubusercontent.com/hsmi0021/fit3179/refs/heads/main/all%20launches.csv"
-},
-"transform": [
-    {"filter":"datum.OrbPay <= 100"}
-],
-"params": [{
-    "name":"Code",
-    "select":{"type": "point","fields": ["orbit"]},
-    "bind":"legend"
-}],
+
+
+
+"background":"aliceblue",
 "layer": [
     {
+        "data":{
+            "url": "https://raw.githubusercontent.com/hsmi0021/fit3179/refs/heads/main/all%20launches.csv"
+        },
+        "params": [{
+            "name":"Code",
+            "select":{"type": "point","fields": ["orbit"]},
+            "bind":"legend"
+        }],
+        "transform": [
+            {"filter":"datum.OrbPay <= 100"}
+        ],
         "mark":"point",
         "encoding": {
             "x":{
                 "field":"Launch_Date",
-                "type": "temporal"
+                "type": "temporal",
+                "axis":{"labelFontSize":16,"titleFontSize":16},
+                "title":"launch date"
             },
             "y":{
                 "field":"OrbPay",
-                "type": "quantitative"
+                "type": "quantitative",
+                "axis":{"labelFontSize":16,"titleFontSize":16},
+                "title":"orbital paylod (tons)"
             },
             "color":{
                 "field":"orbit",
@@ -43,7 +51,22 @@
                 "value": 0.1
                 }
         }
-    }
+    },
+    {
+        "data": {
+          "values": [
+            {"a": "Aug 02 1968", "b": 8,"c":"GPS satelites launched"},
+            {"a": "Aug 02 2015", "b": 17,"c":"starlink"},
+            {"a": "Aug 02 2000", "b": 11,"c":"modern rockets"}
+         ]
+       },
+        "mark": {"type": "text", "fontSize" : 16, "fontWeight":"bold", "align" : "left"},
+        "encoding": {
+          "text": {"field":"c"},
+          "x": {"field": "a", "type": "temporal", "title":""},
+          "y": {"field": "b", "type": "quantitative", "title":""}     
+        }
+      }
 ]
 
 }

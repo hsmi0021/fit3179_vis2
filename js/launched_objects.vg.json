@@ -1,14 +1,16 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1650,
+    "width": 1200,
     "height": 450,
-    "title": {"text":"payloads launched into space each year", "fontSize":32},
+    "title": {"text":"Payloads launched into space each year", "fontSize":32},
     "data":{
         "url": "https://raw.githubusercontent.com/hsmi0021/fit3179/refs/heads/main/yearly-number-of-objects-launched-into-outer-space.csv"
     },
     "transform": [
         {"filter":"datum.Num >= 10"}
     ],
+
+    "background":"aliceblue",
     
     "layer": [
         {
@@ -21,21 +23,26 @@
             "encoding": {
                 "x":{
                     "field":"Year",
-                    "type": "temporal"
+                    "type": "temporal",
+                    "axis":{"labelFontSize":12  ,"titleFontSize":16}
                 },
                 "y":{
                     "field":"Num",
-                    "type": "quantitative"
+                    "type": "quantitative",
+                    "scale":{"type": "sqrt"},
+                    "axis":{"labelFontSize":16,"titleFontSize":16,"title":"Number of payloads "}
                 },
                 "color":{
                     "field":"Entity",
-                    "type": "nominal"
+                    "type": "nominal",
+                    "legend":{"labelFontSize":16,"titleFontSize":24,"title":"Contry"}
                     
                 },
                 "opacity": {
-                    "condition": {"param": "Code", "value": 1},
+                    "condition": [{"param": "Code", "value": 1}],
                     "value": 0.1
                     }
+                
                 
                 
             }
@@ -53,7 +60,8 @@
                 },
                 "color":{
                     "field":"Entity",
-                    "type": "nominal"
+                    "type": "nominal",
+                    "sort":{"op": "sum","field":"Num","order":"descending"}
                     
                 },
                 

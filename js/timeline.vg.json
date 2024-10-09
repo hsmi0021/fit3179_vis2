@@ -1,13 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height": 100,
-    "width": 1800,
-    "title": "contries to space timeline",
+    "height": 150,
+    "width": 1400,
+    "title": {"text":"contries to space timeline","fontSize":32},
     "data": {
         "url": "https://raw.githubusercontent.com/hsmi0021/fit3179/refs/heads/main/launch_timeline.csv"
       
     },
-
+    "background":"aliceblue",
     "layer": [{
         "mark":"point",
         "encoding": {
@@ -16,7 +16,10 @@
                 "type": "temporal",
                 "title":"time",
                 "axis":{
-                    "grid": false
+                    "grid": false,
+                    "labelFontSize":16,
+                    "titleFontSize":24,
+                    "title":"year"
                 }
             },
             "y":{

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite  -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  
+  <!-- CSS file -->
+    
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+
+</head>
+<body>
+  <div class="page">
+    <!--creating a page-->
+    <!-- creating the grid-->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>An overview of Orbital Launches</h1>
+        
+      </div>
+    </div>
+    <!--first set of graphs-->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="maps1">
+          <div id="launch_site_map" class="maps1"></div>
+          <p class="text"> rockets are launched from far more places than just the USA or Russia. 
+            Many launches are also conducted at sea far away from people for safty reasons. 
+            Many of these tests are clasified and only a rough area is known.
+            it is visable that laucnh sites are still be set up and the space industry is continuing to expand!
+
+          </p>
+          
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="maps2">
+          <div id="map2" class="maps2"></div>
+          <h2></h2>
+          <p class="text"> Not every country has acces to space. In fact its quite a exclusive club. However most contries share this capability for the good of humaity
+            this can be seen below, while many of these countries dont ahve access to indiginous launch capability they still place many satelites in orbit each year
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <!--doing the line graph and timeline-->
+    <div class="pure-g">
+      <div class=" pure-u-1-1">
+        <div class="timeline-and-objects">
+
+          <div class="timeline" id="timeline"></div>
+          <div>
+            <H3></H3>
+          </div>
+          <div id="objects"></div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-1-4">
+        <div class="PayloadText">
+          <h3> where are the launches going?</h3>
+          <p>
+            As one can see, the pace of launches throughout history has been steadily increasing. 
+            With more launches in the past 10 years than ever before, rivaling even that of the space race.  
+            One can see a growing trend in heavier payloads being delivered to geostationary orbits and a rapid 
+            uptick in satellites being placed in low earth orbit through programs such as SpaceX’s star link. 
+            This is due to more capable and crucially reusable rockets being developed.
+            In addition to the shift away from Lunar and deep space research in recent times can be seen in the lack of recent 
+            satelites to these locations.
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-1-4">
+        <div class="payload">
+          <div id="payload"></div>
+        </div>
+      </div>
+    </div> 
+    <div>
+      <p>written by Henry smith with data from:<a href="https://raw.githubusercontent.com/hsmi0021/fit3179_vis2/refs/heads/main/sources.text">here</a>, 2024</p>
+    </div> 
+  </div>
+
+
+
+
+<script type="text/javascript">
+
+  var spec2 = "js/timeline.vg.json";
+  var spec3 = "js/launch_site_map.vg.json";
+  var spec4 = "js/payload.vg.json"
+  var spec5 = "js/launched_objects.vg.json"
+  var spec6 = "js/destinations.vg.json"
+  var spec7 = "js/chloropleth.vg.json"
+  vegaEmbed('#timeline', "js/timeline.vg.json").then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#launch_site_map', spec3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#payload', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#objects', spec5).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#destination', spec6).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#map2', spec7).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+</script>
+
+</body>
+</html>
